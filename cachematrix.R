@@ -1,6 +1,6 @@
 ## Caching the inverse of a matrix
-## To avoid the repeated computation for matrix inversion, I write 
-## pair of functions to cache the inversion of the matrix
+## To avoid the repeated computation for matrix inversion, I write a 
+## pair of functions to store and cache the inversion of the matrix
 
 
 ## This function creates a special "matrix" object that can 
@@ -34,8 +34,8 @@ cacheSolve <- function(x, ...) {
         	    message("getting cached data")
         	    return(inv)
         }
-        mat <- x$get()
-        inv <- solve(mat, ...)
+        data <- x$get()
+        inv <- solve(data, ...)
         x$setInverse(inv)
         inv
 }
